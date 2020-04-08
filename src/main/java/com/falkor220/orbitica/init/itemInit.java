@@ -14,9 +14,11 @@ import net.minecraftforge.registries.ObjectHolder;
 public class itemInit {
 
     public static final Item example_item = null;
+    public static final Item test_item = null;
 
     @SubscribeEvent
     public  static void registerItems(final RegistryEvent.Register<Item> event){
         event.getRegistry().register(new Item(new Item.Properties().group(ItemGroup.MISC)).setRegistryName("example_item"));
+        event.getRegistry().register(new Item(new Item.Properties().group(ItemGroup.MISC)).setRegistryName("test_item"));
     }
 }

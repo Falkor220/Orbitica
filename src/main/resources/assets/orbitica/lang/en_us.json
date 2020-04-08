@@ -1,3 +1,4 @@
 {
-  "item.example_item.name": "Example Item"
+  "item.orbitica.example_item": "Example Item",
+  "item.orbitica.test_item": "Test Item"
 }
