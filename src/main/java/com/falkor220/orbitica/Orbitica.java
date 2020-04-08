@@ -24,6 +24,8 @@ public class Orbitica
 {
     // Directly reference a log4j logger.
     private static final Logger LOGGER = LogManager.getLogger();
+    public static final String MOD_ID = "orbitica";
+    public static Orbitica instance;
 
     public Orbitica() {
         // Register the setup method for modloading
@@ -36,6 +38,8 @@ public class Orbitica
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
         // Register ourselves for server and other game events we are interested in
+        instance = this;
+
         MinecraftForge.EVENT_BUS.register(this);
     }
 
