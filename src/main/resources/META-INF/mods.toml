@@ -26,13 +26,13 @@ version="0.1" #mandatory
 displayName="Orbitica" #mandatory
 
 # A URL to query for updates for this mod. See the JSON update specification <here>
-updateJSONURL="" #optional
+updateJSONURL="http://myurl.me/" #optional
 
 # A URL for the "homepage" for this mod, displayed in the mod UI
-displayURL="" #optional
+displayURL="http://example.com/" #optional
 
 # A file name (in the root of the mod JAR) containing a logo for display
-logoFile="" #optional
+logoFile="examplemod.png" #optional
 
 # A text field displayed in the mod UI
 credits="Falkor220" #optional
@@ -42,14 +42,10 @@ authors="Falkor220" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-My first mod and a test to see how much java i remember
+ Test mod
 '''
-
-
-
-
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.orbitica]] #optional
+[[dependencies.examplemod]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
