@@ -1,7 +1,10 @@
 package com.falkor220.orbitica;
 
+import com.falkor220.orbitica.init.blockInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -28,16 +31,11 @@ public class Orbitica
     public static Orbitica instance;
 
     public Orbitica() {
-        // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        // Register the enqueueIMC method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
-        // Register the processIMC method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
-        // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
-        // Register ourselves for server and other game events we are interested in
         instance = this;
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -73,5 +71,16 @@ public class Orbitica
     public void onServerStarting(FMLServerStartingEvent event) {
         // do something when the server starts
         LOGGER.info("HELLO from server starting");
+    }
+
+
+    public static class OrbiticaItemGroup extends ItemGroup{
+        public static final OrbiticaItemGroup instance = new OrbiticaItemGroup(ItemGroup.GROUPS.length, "orbitica");
+        private OrbiticaItemGroup(int index, String label){
+            super(index, label);
+        }
+        public ItemStack createIcon(){
+            return new ItemStack(blockInit.example_block);
+        }
     }
 }

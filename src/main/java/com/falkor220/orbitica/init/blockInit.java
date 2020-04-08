@@ -25,6 +25,6 @@ public class blockInit {
     }
     @SubscribeEvent
     public static void registerBlockItems(final RegistryEvent.Register<Item> event) {
-        event.getRegistry().register(new BlockItem(example_block, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName("example_block"));
+        event.getRegistry().register(new BlockItem(example_block, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("example_block"));
     }
 }

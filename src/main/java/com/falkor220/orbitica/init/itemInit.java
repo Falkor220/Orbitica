@@ -1,6 +1,7 @@
 package com.falkor220.orbitica.init;
 
 import com.falkor220.orbitica.Orbitica;
+import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraftforge.event.RegistryEvent;
@@ -18,7 +19,7 @@ public class itemInit {
 
     @SubscribeEvent
     public  static void registerItems(final RegistryEvent.Register<Item> event){
-        event.getRegistry().register(new Item(new Item.Properties().group(ItemGroup.MISC)).setRegistryName("example_item"));
-        event.getRegistry().register(new Item(new Item.Properties().group(ItemGroup.MISC)).setRegistryName("test_item"));
+        event.getRegistry().register(new Item(new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("example_item"));
+        event.getRegistry().register(new Item(new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance).food(new Food.Builder().hunger(10).saturation(1.2f).build())).setRegistryName("test_item"));
     }
 }
