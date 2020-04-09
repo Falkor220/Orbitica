@@ -1,25 +1,97 @@
 package com.falkor220.orbitica.init;
 
 import com.falkor220.orbitica.Orbitica;
-import net.minecraft.item.Food;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.item.*;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.util.LazyValue;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.ObjectHolder;
 
+import java.util.function.Supplier;
+
 @Mod.EventBusSubscriber(modid = Orbitica.MOD_ID, bus = Bus.MOD)
 @ObjectHolder(Orbitica.MOD_ID)
 public class itemInit {
 
-    public static final Item example_item = null;
-    public static final Item test_item = null;
+    //ore drops
+    public static final Item melodi_crystal = null;
+    public static final Item big_melodi_crystal = null;
+
+    //tools
+    public static final Item melodi_sword = null;
+    public static final Item melodi_pick_axe = null;
+    public static final Item melodi_axe = null;
+    public static final Item melodi_hoe = null;
+    public static final Item melodi_shovel = null;
 
     @SubscribeEvent
     public  static void registerItems(final RegistryEvent.Register<Item> event){
-        event.getRegistry().register(new Item(new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("example_item"));
-        event.getRegistry().register(new Item(new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance).food(new Food.Builder().hunger(10).saturation(1.2f).build())).setRegistryName("test_item"));
+
+        //ore drops
+        event.getRegistry().register(new Item(new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_crystal"));
+        event.getRegistry().register(new Item(new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("big_melodi_crystal"));
+
+        //Tools
+        event.getRegistry().register(new SwordItem(ModItemTier.MELODI, 4, 4.5f, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_sword"));
+        event.getRegistry().register(new PickaxeItem(ModItemTier.MELODI, 2, 1.2f, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_pickaxe"));
+        event.getRegistry().register(new AxeItem(ModItemTier.MELODI, 7, 0.9f, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_axe"));
+        event.getRegistry().register(new ShovelItem(ModItemTier.MELODI, 3, 1.0f, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_shovel"));
+        event.getRegistry().register(new HoeItem(ModItemTier.MELODI, 3.5f, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_hoe"));
+    }
+
+    public enum ModItemTier implements IItemTier{
+        MELODI(2, 365, 2.0f, 2.0f, 30, () -> {
+           return Ingredient.fromItems(itemInit.melodi_crystal);
+        });
+
+        private final int harvest_level;
+        private final int max_uses;
+        private final float efficiency;
+        private final float attack_damage;
+        private final int enchantability;
+        private final LazyValue<Ingredient> repair_material;
+
+
+        private ModItemTier(int harvest_level, int max_uses, float efficiency, float attack_damage, int enchantability, Supplier<Ingredient> repair_material){
+            this.harvest_level = harvest_level;
+            this.max_uses = max_uses;
+            this.efficiency = efficiency;
+            this.attack_damage = attack_damage;
+            this.enchantability = enchantability;
+            this.repair_material = new LazyValue<>(repair_material);
+        }
+
+        @Override
+        public int getMaxUses() {
+            return this.max_uses;
+        }
+
+        @Override
+        public float getEfficiency() {
+            return this.efficiency;
+        }
+
+        @Override
+        public float getAttackDamage() {
+            return this.attack_damage;
+        }
+
+        @Override
+        public int getHarvestLevel() {
+            return this.harvest_level;
+        }
+
+        @Override
+        public int getEnchantability() {
+            return this.enchantability;
+        }
+
+        @Override
+        public Ingredient getRepairMaterial() {
+            return this.repair_material.getValue();
+        }
     }
 }

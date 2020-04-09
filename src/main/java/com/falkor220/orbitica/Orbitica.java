@@ -1,6 +1,6 @@
 package com.falkor220.orbitica;
 
-import com.falkor220.orbitica.init.blockInit;
+import com.falkor220.orbitica.init.itemInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemGroup;
@@ -80,7 +80,7 @@ public class Orbitica
             super(index, label);
         }
         public ItemStack createIcon(){
-            return new ItemStack(blockInit.example_block);
+            return new ItemStack(itemInit.melodi_crystal);
         }
     }
 }

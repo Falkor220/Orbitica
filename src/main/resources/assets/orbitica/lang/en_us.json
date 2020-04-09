@@ -1,9 +1,15 @@
 {
-  "item.orbitica.example_item": "Example Item",
-  "item.orbitica.test_item": "Test Item",
+  "item.orbitica.melodi_crystal": "Melodi Crystal",
+  "item.orbitica.big_melodi_crystal": "Big Melodi Crystal",
+
+  "item.orbitica.melodi_sword": "Melodi Sword",
+  "item.orbitica.melodi_axe": "Melodi Axe",
+  "item.orbitica.melodi_pickaxe": "Melodi Pickaxe",
+  "item.orbitica.melodi_shovel": "Melodi Shovel",
+  "item.orbitica.melodi_hoe": "Melodi Hoe",
 
 
-  "block.orbitica.example_block": "Example Block",
+  "block.orbitica.melodi_ore": "Melodi Ore",
 
   "itemGroup.orbitica": "Orbitica"
 }

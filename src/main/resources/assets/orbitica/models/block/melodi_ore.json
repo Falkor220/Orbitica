@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "orbitica:blocks/example_block"
+    "all": "orbitica:blocks/melodi_ore"
   }
 }

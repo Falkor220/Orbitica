@@ -1,6 +1,6 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "orbitica:items/test_item"
+        "layer0": "orbitica:items/melodi_crystal"
     }
 }
