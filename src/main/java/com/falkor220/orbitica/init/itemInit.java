@@ -35,15 +35,15 @@ public class itemInit {
         event.getRegistry().register(new Item(new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("big_melodi_crystal"));
 
         //Tools
-        event.getRegistry().register(new SwordItem(ModItemTier.MELODI, 4, 4.5f, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_sword"));
-        event.getRegistry().register(new PickaxeItem(ModItemTier.MELODI, 2, 1.2f, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_pickaxe"));
-        event.getRegistry().register(new AxeItem(ModItemTier.MELODI, 7, 0.9f, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_axe"));
-        event.getRegistry().register(new ShovelItem(ModItemTier.MELODI, 3, 1.0f, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_shovel"));
-        event.getRegistry().register(new HoeItem(ModItemTier.MELODI, 3.5f, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_hoe"));
+        event.getRegistry().register(new SwordItem(ModItemTier.MELODI, 3, -2.3f, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_sword"));
+        event.getRegistry().register(new PickaxeItem(ModItemTier.MELODI, 1, -2.7f, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_pickaxe"));
+        event.getRegistry().register(new AxeItem(ModItemTier.MELODI, 6, -2.8f, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_axe"));
+        event.getRegistry().register(new ShovelItem(ModItemTier.MELODI, 2, -2.8f, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_shovel"));
+        event.getRegistry().register(new HoeItem(ModItemTier.MELODI, -0.8f, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_hoe"));
     }
 
     public enum ModItemTier implements IItemTier{
-        MELODI(2, 365, 2.0f, 2.0f, 30, () -> {
+        MELODI(2, 365, 7.0f, 2.0f, 30, () -> {
            return Ingredient.fromItems(itemInit.melodi_crystal);
         });
 
