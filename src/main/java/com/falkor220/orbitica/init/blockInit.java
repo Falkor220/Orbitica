@@ -18,13 +18,16 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 @Mod.EventBusSubscriber(modid = Orbitica.MOD_ID, bus = Bus.MOD)
 public class blockInit {
     public static final Block melodi_ore = null;
+    public static final Block melodi_crystal_block = null;
 
     @SubscribeEvent
     public static void registerBlocks(final RegistryEvent.Register<Block> event) {
         event.getRegistry().register(new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(3f, 4f).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)).setRegistryName("melodi_ore"));
+        event.getRegistry().register(new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(3f, 4f).sound(SoundType.GLASS).harvestTool(ToolType.PICKAXE)).setRegistryName("melodi_crystal_block"));
     }
     @SubscribeEvent
     public static void registerBlockItems(final RegistryEvent.Register<Item> event) {
         event.getRegistry().register(new BlockItem(melodi_ore, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_ore"));
+        event.getRegistry().register(new BlockItem(melodi_crystal_block, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_crystal_block"));
     }
 }

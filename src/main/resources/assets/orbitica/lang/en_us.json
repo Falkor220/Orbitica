@@ -10,6 +10,11 @@
 
 
   "block.orbitica.melodi_ore": "Melodi Ore",
+  "block.orbitica.melodi_crystal_block": "Block Of Melodi Crystal",
+
+
+  "item.orbitica.flute_wand": "Flute",
+
 
   "itemGroup.orbitica": "Orbitica"
 }

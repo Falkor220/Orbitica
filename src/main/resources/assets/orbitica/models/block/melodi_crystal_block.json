@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "orbitica:blocks/melodi_crystal_block"
+  }
+}
