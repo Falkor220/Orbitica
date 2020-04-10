@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ggg",
+    "gmg",
+    "ggg"
+  ],
+  "key": {
+    "m": {
+      "item": "orbitica:melodi_crystal"
+    },
+    "g": {
+      "tag": "forge:glass"
+    }
+  },
+  "result": {
+    "item": "orbitica:melodi_glass",
+    "count": 8
+  }
+}

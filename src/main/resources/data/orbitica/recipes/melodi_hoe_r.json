@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " Mm",
+    " S ",
+    " S "
+  ],
+  "key": {
+    "m": {
+      "item": "orbitica:melodi_crystal"
+    },
+    "M": {
+      "item": "orbitica:big_melodi_crystal"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "orbitica:melodi_hoe"
+  }
+}

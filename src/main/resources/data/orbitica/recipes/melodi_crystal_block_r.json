@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "mmm",
+    "mMm",
+    "mmm"
+  ],
+  "key": {
+    "m": {
+      "item": "orbitica:melodi_crystal"
+    },
+    "M": {
+      "item": "orbitica:big_melodi_crystal"
+    }
+  },
+  "result": {
+    "item": "orbitica:melodi_crystal_block"
+  }
+}
