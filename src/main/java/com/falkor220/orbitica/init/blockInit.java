@@ -25,7 +25,7 @@ public class blockInit {
     public static void registerBlocks(final RegistryEvent.Register<Block> event) {
         event.getRegistry().register(new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(3f, 4f).sound(SoundType.STONE).harvestTool(ToolType.PICKAXE)).setRegistryName("melodi_ore"));
         event.getRegistry().register(new Block(Block.Properties.create(Material.IRON).hardnessAndResistance(3f, 4f).sound(SoundType.GLASS).harvestTool(ToolType.PICKAXE)).setRegistryName("melodi_crystal_block"));
-        event.getRegistry().register(new Block(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3f, 0.3f).sound(SoundType.GLASS)).setRegistryName("melodi_glass"));
+        event.getRegistry().register(new Block(Block.Properties.create(Material.GLASS).hardnessAndResistance(0.3f, 0.3f).sound(SoundType.GLASS).notSolid()).setRegistryName("melodi_glass"));
     }
     @SubscribeEvent
     public static void registerBlockItems(final RegistryEvent.Register<Item> event) {

@@ -4,6 +4,8 @@ import com.falkor220.orbitica.init.itemInit;
 import com.falkor220.orbitica.world.gen.MelodiOreGen;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -16,6 +18,7 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import com.falkor220.orbitica.init.blockInit;
 
 import java.util.stream.Collectors;
 
@@ -48,6 +51,7 @@ public class Orbitica
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
+        RenderTypeLookup.setRenderLayer(blockInit.melodi_glass, RenderType.getTranslucent());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)
