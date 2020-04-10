@@ -2,9 +2,14 @@ package com.falkor220.orbitica.init;
 
 import com.falkor220.orbitica.Orbitica;
 import com.falkor220.orbitica.objects.items.WandItem;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.LazyValue;
+import net.minecraft.util.SoundEvent;
+import net.minecraft.util.SoundEvents;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -31,6 +36,12 @@ public class itemInit {
     //wands
     public static final Item flute = null;
 
+    //armor
+    public static final Item melodi_helmet = null;
+    public static final Item melodi_chestplate = null;
+    public static final Item melodi_leggings = null;
+    public static final Item melodi_boots = null;
+
     @SubscribeEvent
     public  static void registerItems(final RegistryEvent.Register<Item> event){
 
@@ -47,6 +58,12 @@ public class itemInit {
 
         //wands
         event.getRegistry().register(new WandItem(new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("flute_wand"));
+
+        //armor
+        event.getRegistry().register(new ArmorItem(ModItemMaterial.MELODI, EquipmentSlotType.HEAD, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_helmet"));
+        event.getRegistry().register(new ArmorItem(ModItemMaterial.MELODI, EquipmentSlotType.CHEST, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_chestplate"));
+        event.getRegistry().register(new ArmorItem(ModItemMaterial.MELODI, EquipmentSlotType.LEGS, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_leggings"));
+        event.getRegistry().register(new ArmorItem(ModItemMaterial.MELODI, EquipmentSlotType.FEET, new Item.Properties().group(Orbitica.OrbiticaItemGroup.instance)).setRegistryName("melodi_boots"));
     }
 
     public enum ModItemTier implements IItemTier{
@@ -99,6 +116,68 @@ public class itemInit {
         @Override
         public Ingredient getRepairMaterial() {
             return this.repair_material.getValue();
+        }
+    }
+
+    public enum ModItemMaterial implements IArmorMaterial{
+        //Boots, Legs, Chest, Head
+        MELODI(Orbitica.MOD_ID + ":melodi_armor", 5, new int[] {7, 9, 11, 7}, 30, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 3.0f, () -> {
+            return Ingredient.fromItems(itemInit.melodi_crystal);
+        });
+
+        private static final int[] MAX_DAMAGE_ARRAY = new int[] {70, 90, 100, 90};
+        private final String name;
+        private final int maxDamageFactor;
+        private final int[] damageReductionAmountArray;
+        private final int enchantability;
+        private final SoundEvent soundEvent;
+        private final float toughness;
+        private final LazyValue<Ingredient> repairMaterial;
+
+        private ModItemMaterial(String nameIn, int maxDamageFactor, int[] damageReductionAmountIn, int enchantabilityIn, SoundEvent soundEventIn, float toughnessIn, Supplier<Ingredient> repairMaterialIn){
+            this.name = nameIn;
+            this.maxDamageFactor = maxDamageFactor;
+            this.damageReductionAmountArray = damageReductionAmountIn;
+            this.enchantability = enchantabilityIn;
+            this.soundEvent = soundEventIn;
+            this.toughness = toughnessIn;
+            this.repairMaterial = new LazyValue<>(repairMaterialIn);
+        }
+
+        @Override
+        public int getDurability(EquipmentSlotType slotIn) {
+            return MAX_DAMAGE_ARRAY[slotIn.getIndex()] * this.maxDamageFactor;
+        }
+
+        @Override
+        public int getDamageReductionAmount(EquipmentSlotType slotIn) {
+            return this.damageReductionAmountArray[slotIn.getIndex()];
+        }
+
+        @Override
+        public int getEnchantability() {
+            return this.enchantability;
+        }
+
+        @Override
+        public SoundEvent getSoundEvent() {
+            return this.soundEvent;
+        }
+
+        @Override
+        public Ingredient getRepairMaterial() {
+            return this.repairMaterial.getValue();
+        }
+
+        @OnlyIn(Dist.CLIENT)
+        @Override
+        public String getName() {
+            return this.name;
+        }
+
+        @Override
+        public float getToughness() {
+            return toughness;
         }
     }
 }

@@ -8,13 +8,16 @@
   "item.orbitica.melodi_shovel": "Melodi Shovel",
   "item.orbitica.melodi_hoe": "Melodi Hoe",
 
+  "item.orbitica.melodi_helmet": "Melodi Helmet",
+  "item.orbitica.melodi_leggings": "Melodi Leggings",
+  "item.orbitica.melodi_chestplate": "Melodi Chestplate",
+  "item.orbitica.melodi_boots": "Melodi Boots",
 
   "block.orbitica.melodi_ore": "Melodi Ore",
   "block.orbitica.melodi_crystal_block": "Block Of Melodi Crystal",
-
+  "block.orbitica.melodi_glass": "Melodi Glass",
 
   "item.orbitica.flute_wand": "Flute",
-
 
   "itemGroup.orbitica": "Orbitica"
 }
