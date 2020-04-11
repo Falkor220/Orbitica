@@ -73,6 +73,7 @@ public class Orbitica
     private void doClientStuff(final FMLClientSetupEvent event) {
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
         RenderTypeLookup.setRenderLayer(blockInitNew.MELODI_GLASS.get(), RenderType.getTranslucent());
+        RenderTypeLookup.setRenderLayer(blockInitNew.BELL_SAPLING.get(), RenderType.getCutout());
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event)

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "orbitica:block/bell_log"
+    },
+    "axis=z": {
+      "model": "orbitica:block/bell_log",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "orbitica:block/bell_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}
