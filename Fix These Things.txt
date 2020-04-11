@@ -1,0 +1,9 @@
+Tree{
+Why sapling hitbox so long?
+Why tree so big?
+Why leaves decay when so close to wood?
+}
+
+Render{
+Glass
+}
