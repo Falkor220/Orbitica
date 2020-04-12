@@ -22,7 +22,7 @@ import java.util.function.Supplier;
 public class CustomSaplingBlock extends BushBlock implements IGrowable {
 
     public static final IntegerProperty STAGE = BlockStateProperties.STAGE_0_1;
-    protected static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D,0.0D,2.0D,14.0D,120D, 14.0D);
+    protected static final VoxelShape SHAPE = Block.makeCuboidShape(2.0D,0.0D,2.0D,14.0D,12.0D, 14.0D);
     private final Supplier<Tree> tree;
 
     public CustomSaplingBlock(Supplier<Tree> treeIn, Properties properties){

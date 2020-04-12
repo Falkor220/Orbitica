@@ -1,9 +1,19 @@
 Fix Tree{
-Why sapling hitbox so long?
 Why tree so big?
 Why leaves decay when so close to wood?
 }
 
 Render{
 Fix Glass Render
+}
+
+Additions{
+bell plank slabs
+bell door
+bell trapdoor
+bell stairs
+bell fence
+bell gate
+bell striped log
+bell Wood (Bark block)
 }
