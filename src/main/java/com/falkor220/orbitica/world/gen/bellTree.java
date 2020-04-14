@@ -15,7 +15,7 @@ import java.util.Random;
 public class bellTree extends Tree{
     public static final TreeFeatureConfig BELL_TREE_CONFIG = (new TreeFeatureConfig.Builder(new SimpleBlockStateProvider(blockInitNew.BELL_LOG.get().getDefaultState()),
             new SimpleBlockStateProvider(blockInitNew.BELL_LEAVES.get().getDefaultState()),
-            new BlobFoliagePlacer(3,0))).baseHeight(13).heightRandA(6).foliageHeight(9).ignoreVines().setSapling((IPlantable) blockInitNew.BELL_SAPLING.get()).build();
+            new BlobFoliagePlacer(2, 0))).baseHeight(8).heightRandA(2).foliageHeight(5).ignoreVines().trunkHeight(5).trunkHeightRandom(2).setSapling((IPlantable) blockInitNew.BELL_SAPLING.get()).build();
 
 
     @Nullable

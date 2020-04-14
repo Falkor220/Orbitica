@@ -1,10 +1,10 @@
 Fix Tree{
-Why tree so big?
-Why leaves decay when so close to wood?
+Loot tables
 }
 
-Render{
+Glass{
 Fix Glass Render
+Loot tables
 }
 
 Additions{
@@ -16,4 +16,9 @@ bell fence
 bell gate
 bell striped log
 bell Wood (Bark block)
+}
+
+Wands{
+Ocarina
+Harp
 }
