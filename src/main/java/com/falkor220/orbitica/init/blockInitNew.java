@@ -23,6 +23,5 @@ public class blockInitNew {
     public static final RegistryObject<Block> BELL_LEAVES = BLOCKS.register("bell_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
     public static final RegistryObject<Block> BELL_SAPLING = BLOCKS.register("bell_sapling", () -> new CustomSaplingBlock(() -> new bellTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 
-
 }
 
