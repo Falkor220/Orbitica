@@ -6,7 +6,6 @@ import com.falkor220.orbitica.world.gen.bellTree;
 import net.minecraft.block.*;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
-import net.minecraftforge.common.ToolType;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,6 +21,5 @@ public class blockInitNew {
     public static final RegistryObject<Block> BELL_LOG = BLOCKS.register("bell_log", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
     public static final RegistryObject<Block> BELL_LEAVES = BLOCKS.register("bell_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
     public static final RegistryObject<Block> BELL_SAPLING = BLOCKS.register("bell_sapling", () -> new CustomSaplingBlock(() -> new bellTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
-
 }
 
